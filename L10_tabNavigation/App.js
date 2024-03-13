@@ -4,8 +4,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
 
 import HomeScreen from './app/screens/HomeScreen';
-import InfoScreen from './app/screens/InfoScreen';
-import PhotoScreen from './app/screens/PhotoScreen';
+import FavoritesScreen from './app/screens/FavoritesScreen';
+import SettingsScreen from './app/screens/SettingsScreen';
 
 // Find icons! These are the ones I chose
 // import { Ionicons } from '@expo/vector-icons';
@@ -36,18 +36,18 @@ export default function App() {
             // the outline is the 'empty' one for when its NOT selected
             if (route.name ==='Home') {
               iconName = focused
-              ? 'home'
-              : 'home-outline';
+              ? 'newspaper'
+              : 'newspaper-outline';
             }
-            else if (route.name === 'Info') {
+            else if (route.name === 'Favs') {
               iconName = focused
-              ? 'information-circle'
-              : 'information-circle-outline'
+              ? 'heart-circle'
+              : 'heart-circle-outline'
             }
-            else if (route.name === 'Photo') {
+            else if (route.name === 'Settings') {
               iconName = focused
-              ? 'image'
-              : 'image-outline'
+              ? 'settings'
+              : 'settings-outline'
             }
             return <Ionicons name={iconName} size ={26} color='blue'/>
           },
@@ -57,8 +57,8 @@ export default function App() {
       >
 
         <Tab.Screen name='Home' component={HomeScreen} />
-        <Tab.Screen name='Info' component={InfoScreen} />
-        <Tab.Screen name='Photo' component={PhotoScreen} />
+        <Tab.Screen name='Favs' component={FavoritesScreen} />
+        <Tab.Screen name='Settings' component={SettingsScreen} />
 
       </Tab.Navigator>
     </NavigationContainer>
